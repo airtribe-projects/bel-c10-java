@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+  <bean class="org.airtribe.Car" id="mycar">
+    <constructor-arg value="sedan"></constructor-arg>
+    <constructor-arg ref="engine1"></constructor-arg>
+  </bean>
+
+  <bean class="org.airtribe.Car" id="avinashcar">
+    <constructor-arg value="suv"></constructor-arg>
+    <constructor-arg ref="engine2"></constructor-arg>
+  </bean>
+
+  <bean class="org.airtribe.Engine" id="engine1">
+    <constructor-arg value="toyota"></constructor-arg>
+    <constructor-arg value="super engine"></constructor-arg>
+  </bean>
+
+  <bean class="org.airtribe.Engine" id="engine2">
+    <constructor-arg value="maruti"></constructor-arg>
+    <constructor-arg value="engine"></constructor-arg>
+  </bean>
+
+</beans>
+
