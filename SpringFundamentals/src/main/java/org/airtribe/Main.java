@@ -2,8 +2,6 @@ package org.airtribe;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 
 public class Main {
 
@@ -13,13 +11,12 @@ public class Main {
   public static void main(String[] args) {
 
     //ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
-    ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanConfig.class);
-    Car car = applicationContext.getBean("mycar", Car.class); // object 1
-    Car avinashCar = applicationContext.getBean("avinashcar", Car.class); // object 3
+    ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnotationBeanConfig.class);
+    Car car = applicationContext.getBean(MarutiCar.class);
+    Car car2 = applicationContext.getBean(ToyotaCar.class);
 
     System.out.println(car.hashCode());
-    System.out.println(avinashCar.hashCode());
+    car2.drive();
     car.drive();
-    avinashCar.drive();
   }
 }
